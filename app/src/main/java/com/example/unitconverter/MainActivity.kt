@@ -105,6 +105,15 @@ fun UnitConverter() {
                 }
                 DropdownMenu(expanded = iExpanded, onDismissRequest = {iExpanded=false}) {
                     DropdownMenuItem(
+                        text = { Text("Millimeters") },
+                        onClick = {
+                            iExpanded=false
+                            inputUnit="Millimeters"
+                            conversionFactor.value=0.001
+                            convertUnits()
+                        })
+
+                    DropdownMenuItem(
                         text = { Text("Centimeters") },
                         onClick = {
                             iExpanded=false
@@ -121,6 +130,22 @@ fun UnitConverter() {
                             convertUnits()
                         })
                     DropdownMenuItem(
+                        text = { Text("Kilometers")},
+                        onClick = {
+                            iExpanded=false
+                            inputUnit="Kilometers"
+                            conversionFactor.value=1000.0
+                            convertUnits()
+                        })
+                    DropdownMenuItem(
+                        text = { Text("Inches") },
+                        onClick = {
+                            iExpanded=false
+                            inputUnit="Inches"
+                            conversionFactor.value=0.0254
+                            convertUnits()
+                        })
+                    DropdownMenuItem(
                         text = { Text("Feet") },
                         onClick = {
                             iExpanded=false
@@ -128,14 +153,7 @@ fun UnitConverter() {
                             conversionFactor.value=0.3048
                             convertUnits()
                         })
-                    DropdownMenuItem(
-                        text = { Text("Millimeters") },
-                        onClick = {
-                            iExpanded=false
-                            inputUnit="Millimeters"
-                            conversionFactor.value=0.001
-                            convertUnits()
-                        })
+
                 }
             }
             Spacer(modifier = Modifier.width(16.dp))
@@ -146,6 +164,14 @@ fun UnitConverter() {
                     Icon(Icons.Default.ArrowDropDown, contentDescription = "Arrow Down")
                 }
                 DropdownMenu(expanded = oExpanded, onDismissRequest = {oExpanded=false}) {
+                    DropdownMenuItem(
+                        text = { Text("Millimeters") },
+                        onClick = {
+                            oExpanded=false
+                            outputUnit="Millimeters"
+                            oConversionFactor.value=0.001
+                            convertUnits()
+                        })
                     DropdownMenuItem(
                         text = { Text("Centimeters") },
                         onClick = {
@@ -163,6 +189,22 @@ fun UnitConverter() {
                             convertUnits()
                         })
                     DropdownMenuItem(
+                        text = { Text("Kilometers")},
+                        onClick = {
+                            oExpanded=false
+                            outputUnit="Kilometers"
+                            oConversionFactor.value=1000.0
+                            convertUnits()
+                        })
+                    DropdownMenuItem(
+                        text = { Text("Inches") },
+                        onClick = {
+                            oExpanded=false
+                            outputUnit="Inches"
+                            oConversionFactor.value=0.0254
+                            convertUnits()
+                        })
+                    DropdownMenuItem(
                         text = { Text("Feet") },
                         onClick = {
                             oExpanded=false
@@ -170,14 +212,7 @@ fun UnitConverter() {
                             oConversionFactor.value=0.3048
                             convertUnits()
                         })
-                    DropdownMenuItem(
-                        text = { Text("Millimeters") },
-                        onClick = {
-                            oExpanded=false
-                            outputUnit="Millimeters"
-                            oConversionFactor.value=0.001
-                            convertUnits()
-                        })
+
                 }
             }
         }
